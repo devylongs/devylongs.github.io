@@ -1,0 +1,53 @@
+:root {
+  color-scheme: dark;
+  font-family: "Times New Roman", Times, serif;
+  color: #fff;
+  background: #000;
+  font-synthesis: none;
+  -webkit-text-size-adjust: 100%;
+  --link: #6db3f2;
+  --rule: #333;
+}
+
+* { box-sizing: border-box; }
+body { max-width: 700px; margin: 60px auto; padding: 0 10px; font-size: 18px; line-height: 1.6; }
+a, a:visited { color: var(--link); text-decoration: none; }
+a:hover { text-decoration: underline; }
+a:focus-visible { outline: 2px solid var(--link); outline-offset: 4px; }
+.site-header { border-bottom: 1px solid var(--rule); margin-bottom: 2em; padding: 1em 20px; text-align: center; }
+h1 { font-size: 28px; font-weight: 400; font-style: italic; margin: 0 0 0.5em; }
+nav { font-size: 18px; }
+nav a { padding: 0 0.5em; display: inline-block; }
+nav a[aria-current="page"] { font-weight: 700; text-decoration: underline; }
+.separator { color: #999; padding: 0 0.5em; }
+main { overflow-wrap: break-word; }
+main:focus { outline: none; }
+ul { margin: 0.5em 0; padding-left: 30px; }
+li { margin-bottom: 0.25em; }
+p { margin: 1em 0; }
+main > p:first-of-type { margin-top: 0.5em; }
+h2 { font-size: 24px; font-weight: 400; font-style: italic; line-height: 1.6; margin: 0; }
+section + section { margin-top: 1.5em; }
+.skip-link { position: fixed; top: 8px; left: 8px; padding: 8px 12px; background: #000; transform: translateY(-180%); z-index: 1; }
+.skip-link:focus { transform: translateY(0); }
+
+@media (max-width: 768px) {
+  .site-header { padding: 0.75em 20px; margin-bottom: 1.5em; }
+  h1 { font-size: 22px; margin-bottom: 0.75em; }
+  nav { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 0.25em; font-size: 14px; line-height: 1.8; }
+  nav a { padding: 0.2em 0.4em; white-space: nowrap; }
+  .separator { padding: 0 0.2em; }
+}
+@media (max-width: 480px) {
+  .site-header { padding: 0.5em 20px; }
+  h1 { font-size: 20px; margin-bottom: 0.5em; }
+  nav { font-size: 13px; gap: 0.1em; }
+  nav a { padding: 0.25em 0.5em; margin: 0.1em; }
+  .separator { display: none; }
+}
+@media (max-width: 360px) {
+  .site-header { padding-inline: 10px; }
+  h1 { font-size: 18px; margin-bottom: 0.4em; }
+  nav { font-size: 12px; }
+  nav a { padding: 0.2em 0.4em; margin: 0.05em; }
+}

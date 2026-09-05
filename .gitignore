@@ -1,0 +1,6 @@
+.DS_Store
+.env
+.env.*
+qa/
+design-qa.md
+__pycache__/
