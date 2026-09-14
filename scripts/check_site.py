@@ -37,7 +37,8 @@ for path in root.rglob("*.html"):
     assert page.current == 1, f"Expected one active navigation link: {path}"
     assert "script" not in page.tags, f"Site should work with HTML and CSS only: {path}"
 
-assert len(pages) == 4, "Expected Home, About, Projects, and Contact"
+expected_pages = {root / "index.html", root / "writing/index.html", root / "work/index.html"}
+assert set(pages) == expected_pages, "Expected only About (home), Writing, and Work"
 count = 0
 for path, page in pages.items():
     for link in page.links:

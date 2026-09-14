@@ -1,20 +1,19 @@
 # Longs Pemun Gotar — personal website
 
-A small personal website inspired by [gakonst.com](https://gakonst.com/): black background, serif type, a centered column, and simple navigation. Built entirely with HTML and CSS. No JavaScript, framework, package installation, or build step is needed.
+A small personal website styled after [terencechain.com](https://terencechain.com/): a narrow serif text column, lowercase navigation, subtle link underlines, divided project lists, and a small footer. The colors follow the device's light or dark preference. Built entirely with HTML and CSS. No JavaScript, framework, package installation, or build step is needed.
 
 ## Edit the site
 
-- `site/index.html`: name, introduction, and links.
-- `site/about/index.html`: background and experience.
-- `site/projects/index.html`: Gean, Tokkenly, Gean Labs, and BlockFuse Labs.
-- `site/contact/index.html`: public contact links.
+- `site/index.html`: about — name, condensed introduction, and links.
+- `site/writing/index.html`: writing — add published notes here when available.
+- `site/work/index.html`: work — Gean, Tokkenly, Gean Labs, and BlockFuse Labs.
 - `site/styles.css`: shared styles and mobile breakpoints.
 
-The initial copy is a draft based on your workspace's professional profile and the public [Gean repository](https://github.com/geanlabs/gean). Review it before publishing. The contact page includes your supplied email, `longs@geanlabs.com`, and X profile, `https://x.com/devlongs_`.
+The copy is condensed from your original site. The three-page structure matches the reference: about, writing, and work. GitHub and your supplied email, `longs@geanlabs.com`, appear in the footer. Writing has no entries yet because no published articles were supplied.
 
 Gean Labs links use [geanlabs.com](https://geanlabs.com). Tokkenly's description is based on its [public website](https://tokkenly-website.kvng.workers.dev/) and is framed as a project you are building. Links explicitly labeled as open-source work still point to GitHub.
 
-Each HTML file contains its own navigation so every page works independently. When renaming a page or changing the name, update all four files. Keep the current page's `aria-current="page"` attribute on the matching navigation link.
+Each HTML file contains its own navigation so every page works independently. When renaming a page or changing the name, update all three files. Keep the current page's `aria-current="page"` attribute on the matching navigation link.
 
 ## Preview and check
 

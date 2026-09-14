@@ -1,53 +1,104 @@
+/* Layout and typography adapted from terencechain.com. */
 :root {
-  color-scheme: dark;
-  font-family: "Times New Roman", Times, serif;
-  color: #fff;
-  background: #000;
-  font-synthesis: none;
-  -webkit-text-size-adjust: 100%;
-  --link: #6db3f2;
-  --rule: #333;
+  color-scheme: light dark;
+  --bg: #fbfaf7;
+  --fg: #1a1a1a;
+  --muted: #6b6b6b;
+  --accent: #b54a2c;
+  --line: #e6e3dc;
+  --max: 640px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #111110;
+    --fg: #e8e6e1;
+    --muted: #8a8a85;
+    --accent: #e07a55;
+    --line: #2a2a28;
+  }
 }
 
 * { box-sizing: border-box; }
-body { max-width: 700px; margin: 60px auto; padding: 0 10px; font-size: 18px; line-height: 1.6; }
-a, a:visited { color: var(--link); text-decoration: none; }
-a:hover { text-decoration: underline; }
-a:focus-visible { outline: 2px solid var(--link); outline-offset: 4px; }
-.site-header { border-bottom: 1px solid var(--rule); margin-bottom: 2em; padding: 1em 20px; text-align: center; }
-h1 { font-size: 28px; font-weight: 400; font-style: italic; margin: 0 0 0.5em; }
-nav { font-size: 18px; }
-nav a { padding: 0 0.5em; display: inline-block; }
-nav a[aria-current="page"] { font-weight: 700; text-decoration: underline; }
-.separator { color: #999; padding: 0 0.5em; }
-main { overflow-wrap: break-word; }
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: ui-serif, "Iowan Old Style", Charter, Georgia, serif;
+  font-size: 17px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+}
+main {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 5rem 1.5rem 6rem;
+  overflow-wrap: break-word;
+}
+h1,
+h2 { font-weight: 600; letter-spacing: -0.01em; line-height: 1.2; }
+h1 { font-size: 1.6rem; margin: 0 0 0.25rem; }
+h2 {
+  font-size: 1.05rem;
+  margin: 2.5rem 0 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  font-weight: 500;
+}
+p { margin: 0 0 1rem; }
+a {
+  color: var(--fg);
+  text-decoration: underline;
+  text-decoration-color: var(--line);
+  text-underline-offset: 3px;
+  transition: text-decoration-color 0.15s;
+}
+a:hover { text-decoration-color: var(--accent); }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  margin-bottom: 3rem;
+  font-size: 0.9rem;
+}
+nav a { text-decoration: none; color: var(--muted); }
+nav a:hover,
+nav a[aria-current="page"] { color: var(--fg); }
+.lede { color: var(--muted); margin-bottom: 2rem; }
+ul.bare { list-style: none; padding: 0; margin: 0; }
+ul.bare li {
+  padding: 0.6rem 0;
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+ul.bare li:last-child { border-bottom: none; }
+ul.bare .meta { color: var(--muted); font-size: 0.85rem; white-space: nowrap; }
+footer {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 2rem 1.5rem 3rem;
+  color: var(--muted);
+  font-size: 0.85rem;
+  border-top: 1px solid var(--line);
+}
 main:focus { outline: none; }
-ul { margin: 0.5em 0; padding-left: 30px; }
-li { margin-bottom: 0.25em; }
-p { margin: 1em 0; }
-main > p:first-of-type { margin-top: 0.5em; }
-h2 { font-size: 24px; font-weight: 400; font-style: italic; line-height: 1.6; margin: 0; }
-section + section { margin-top: 1.5em; }
-.skip-link { position: fixed; top: 8px; left: 8px; padding: 8px 12px; background: #000; transform: translateY(-180%); z-index: 1; }
+.skip-link {
+  position: fixed;
+  top: 8px;
+  left: 8px;
+  padding: 8px 12px;
+  background: var(--bg);
+  transform: translateY(-180%);
+  z-index: 1;
+}
 .skip-link:focus { transform: translateY(0); }
-
-@media (max-width: 768px) {
-  .site-header { padding: 0.75em 20px; margin-bottom: 1.5em; }
-  h1 { font-size: 22px; margin-bottom: 0.75em; }
-  nav { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 0.25em; font-size: 14px; line-height: 1.8; }
-  nav a { padding: 0.2em 0.4em; white-space: nowrap; }
-  .separator { padding: 0 0.2em; }
-}
-@media (max-width: 480px) {
-  .site-header { padding: 0.5em 20px; }
-  h1 { font-size: 20px; margin-bottom: 0.5em; }
-  nav { font-size: 13px; gap: 0.1em; }
-  nav a { padding: 0.25em 0.5em; margin: 0.1em; }
-  .separator { display: none; }
-}
-@media (max-width: 360px) {
-  .site-header { padding-inline: 10px; }
-  h1 { font-size: 18px; margin-bottom: 0.4em; }
-  nav { font-size: 12px; }
-  nav a { padding: 0.2em 0.4em; margin: 0.05em; }
+@media (prefers-reduced-motion: reduce) {
+  a { transition: none; }
 }
